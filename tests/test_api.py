@@ -44,3 +44,9 @@ def test_rejects_empty_title(client):
 def test_rejects_bad_severity(client):
     r = client.post("/incidents", json={"title": "x", "severity": "urgent"})
     assert r.status_code == 400
+
+
+def test_bad_release_reports_not_ready(client, monkeypatch):
+    import app.main as m
+    monkeypatch.setattr(m, "VERSION", "9.9.9-bad")
+    assert client.get("/ready").status_code == 503

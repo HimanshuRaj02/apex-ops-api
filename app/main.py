@@ -37,6 +37,10 @@ def health():
 
 @app.get("/ready")
 def ready():
+    # Demo hook: a version ending in "-bad" simulates a broken release
+    if VERSION.endswith("-bad"):
+        log.error("simulated bug in release %s", VERSION)
+        return jsonify(status="not ready"), 503
     try:
         conn = db()
         with conn.cursor() as cur:
