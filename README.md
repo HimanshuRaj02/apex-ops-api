@@ -109,3 +109,4 @@ docs/                observability plan, failure investigation, runbook, decisio
 - docs/runbook.md (to be added)
 - docs/decisions.md (to be added)
 - docs/ai-disclosure.md (to be added)
+- docs/security-and-cost.md
