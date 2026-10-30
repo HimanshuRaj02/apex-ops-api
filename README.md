@@ -110,3 +110,4 @@ docs/                observability plan, failure investigation, runbook, decisio
 - docs/decisions.md
 - docs/ai-disclosure.md
 - docs/security-and-cost.md
+- evidence/screenshots/ (01-11 terminal evidence, 12-17 CI runs and diagram)
