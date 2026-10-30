@@ -20,3 +20,11 @@ Fail builds on critical vulnerabilities, pin actions by SHA, add real metrics (/
 
 ## What went wrong and what I learned
 The first CI build failed because the Trivy action version I used had been removed after a supply-chain incident. I bumped to the safe version and noted pinning by commit SHA as a hardening step.
+
+## Assumptions
+- Only synthetic data is used; no real customer data, credentials or Apex systems are touched.
+- The target environment is a single Linux host (tested on Ubuntu under WSL2) with Docker Engine and the Compose plugin, and port 8000 free.
+- No paid cloud resources are used; the cloud path in security-and-cost.md is a proposal, not something deployed.
+- The deploy job in CI is a smoke test on a temporary GitHub runner, not a deployment to a real server.
+- The passwords in .env.example are placeholders for local use only.
+- Trivy findings are reported but do not fail the build yet; this is a deliberate first step.
