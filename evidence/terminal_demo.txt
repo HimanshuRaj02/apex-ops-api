@@ -1,6 +1,8 @@
 ### 1. Current status
-NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
-service "app" is not running
+NAME                 IMAGE                COMMAND                  SERVICE   CREATED        STATUS                  PORTS
+apex-ops-api-app-1   apex-ops-api:1.0.0   "gunicorn -b 0.0.0.0…"   app       25 hours ago   Up 25 hours (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+apex-ops-api-db-1    postgres:16-alpine   "docker-entrypoint.s…"   db        25 hours ago   Up 25 hours (healthy)   5432/tcp
+appuser
 
 ### 2. Deploy 1.0.0
 Deploying 1.0.0 (current: 1.0.0)
@@ -28,7 +30,7 @@ Now running:
  Container apex-ops-api-db-1  Stopped
 health: 200
 ready: 503
-app-1  | {"time": "2026-10-30 06:35:32,237", "level": "ERROR", "message": "readiness check failed: could not translate host name \"db\" to address: Name or service not known\n"}
+app-1  | {"time": "2026-10-31 07:47:04,355", "level": "ERROR", "message": "readiness check failed: could not translate host name \"db\" to address: Name or service not known\n"}
  Container apex-ops-api-db-1  Starting
  Container apex-ops-api-db-1  Started
 after start:
@@ -40,7 +42,7 @@ after start:
 ### 6. Images
 WARNING: This output is designed for human readability. For machine-readable output, please use --format.
 IMAGE                    ID             DISK USAGE   CONTENT SIZE   EXTRA
-apex-ops-api:1.0.0       b76da1b45496        198MB         48.6MB   U    
-apex-ops-api:1.1.0       8c960223ff08        198MB         48.6MB        
-apex-ops-api:2.0.0-bad   68588ef8e620        198MB         48.6MB        
+apex-ops-api:1.0.0       411369e9e766        198MB         48.6MB   U    
+apex-ops-api:1.1.0       7492460d8812        198MB         48.6MB        
+apex-ops-api:2.0.0-bad   d5b24b46bc20        198MB         48.6MB        
 apex-ops-api:test        e22b5e29ff09        198MB         48.6MB        
